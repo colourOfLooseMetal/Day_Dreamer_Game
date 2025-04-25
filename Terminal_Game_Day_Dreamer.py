@@ -10,6 +10,7 @@ print("DDDDD    A     A    Y           DDDDD   R   R   EEEEE  A     A M   M  EEE
 
 #Libraries
 import random
+import time
 
 #Variables
 Energy = 100
@@ -43,6 +44,7 @@ print("Before the game starts, we have a simple question for you...")
 print("")
 print("what is your name?")
 name=input("Enter your name: ")
+timer = time.time()
 print(f"Buzz! Buzz! Buzz! Your alarm clock is going off {name}") 
 print("What will you do?")
 #Q1 - Start of Day
@@ -535,6 +537,7 @@ if Energy<=0:
         print("You feel uneasy and tired.")
         print("That definitely was not a good sleep.")
 
+print("completion time: ",time.time()-timer)
 #Credits
 print("")
 print("Thanks for playing Day-Dreamer!")
