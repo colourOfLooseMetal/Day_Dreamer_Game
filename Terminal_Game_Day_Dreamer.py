@@ -171,6 +171,18 @@ if SugarOs == False:
     if answer5==1:
        print("The customer says, 'Duh, that's why I'm here, genius! I swear, they hire some real idiots here.'")
        Berated = True
+    if answer5==2:
+        print("You give the customer a refund.")
+        print("They leave, satisfied.")
+        print("You feel a little bad for accepting it.")
+        Energy -= 5
+    if answer5==3:
+        print("You deny the return.")
+        print("The customer gets angry and starts yelling at you.")
+        print("They throw the cereal box at you.")
+        print("It hits you in the face.")
+        print("Security escorts the customer out of the store.")
+        ThrownCereal = True
 #Berated
     if Berated == True and SugarOs == False:
             print("")
@@ -194,9 +206,10 @@ if SugarOs == False:
                 print("It hits you in the face.")
                 print("Security escorts the customer out of the store.")
                 ThrownCereal = True
+            
 
 #Q5 - Ate Sugar-Os
-else:
+elif SugarOs == True:
    print("")
    print("1. You want to return a box of cereal you've clearly eaten most of?")
    print("2. [Accept the return] 'Sure, I'll give you a refund.'")
@@ -219,19 +232,19 @@ if Berated == True and SugarOs == True:
     while answer5 != 1 and answer5 != 2 and answer5 != 3:
         print("Please enter a valid answer")
         answer5=int(input("Enter 1, 2, or 3: "))
-if answer5==1:
+if Berated == True and SugarOs == True and answer5==1:
     print("You give the customer a refund.")
     print("They leave, satisfied.")
     print("You feel a little bad for accepting it.")
     Energy -= 5
-if answer5==2:
+if Berated == True and SugarOs == True and answer5==2:
     print("You deny the return.")
     print("The customer gets angry and starts yelling at you.")
     print("They throw the cereal box at you.")
     print("It hits you in the face.")
     print("Security escorts the customer out of the store.")
     ThrownCereal = True
-if answer5==3:
+if Berated == True and SugarOs == True and answer5==3:
     print("You start singing the Sugar-Os jingle.")
     print("The customer smiles, and sings along with you.")
     print("You both sing: 'You can't say no to Sugar-Os!' Oh you can't say no no no! You need them woah woah woah!")
@@ -397,7 +410,7 @@ print("You realize this isn't just a dream, it's a nightmare.")
 print("")
 #Nightmare Boss reveal
 print("Suddenly, the shadow takes form.")
-if BossAngry == True and NewsAnxiety == False:
+if BossAngry == True and NewsAnxiety == False and Berated == False and ThrownCereal == False:
     print("It's your boss!")
     print("He looks angry, and is yelling at you.")
     print("You try to run away, but your legs feel heavy.")
@@ -406,7 +419,7 @@ if BossAngry == True and NewsAnxiety == False:
     print("")
     NightmareBoss=True
     BossName="Nightmare Manager"
-elif NewsAnxiety==True and BossAngry==False:
+elif NewsAnxiety==True and BossAngry==False and Berated == False and ThrownCereal == False:
     print("It's the local politician you heard on the news!")
     print("They are stating their horrible political platform")
     print("You try to run away, but your legs feel heavy.")
@@ -415,7 +428,7 @@ elif NewsAnxiety==True and BossAngry==False:
     print("")
     NightmarePolitician=True
     BossName="Nightmare Politician"
-elif NewsAnxiety==True and BossAngry==True:
+elif NewsAnxiety==True and BossAngry==True and Berated == False and ThrownCereal == False:
     print("It's a two headed monster")
     print("One head is your boss, and the other is the local politician from the news.")
     print("This really is a nightmare!")
@@ -428,16 +441,6 @@ elif NewsAnxiety==True and BossAngry==True:
 elif NewsAnxiety==True and BossAngry==True and Berated == True and ThrownCereal == True:
     print("It's...It's a three headed monster!")
     print("One head is your boss, one is that customer from earlier, and the other is the local politician from the news.")
-    print("This really is a nightmare!")
-    print("You try to run away, but your legs feel heavy.")
-    print("You can't escape.")
-    print("You have to stay and fight.")
-    print("")
-    NightmareThreeHead=True
-    BossName="Ultimate Nightmare"
-elif NewsAnxiety==True and BossAngry==True and Berated == True and ThrownCereal == True:
-    print("It's...It's a three headed monster!")
-    print("One head is your boss, one os that customer from earlier, and the other is the local politician from the news.")
     print("This really is a nightmare!")
     print("You try to run away, but your legs feel heavy.")
     print("You can't escape.")
